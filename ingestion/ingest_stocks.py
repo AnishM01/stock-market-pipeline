@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-AZURE_CONTAINER_NAME = os.getenv("AZURE_CONTAINER_NAME", "bronze")
+AZURE_CONTAINER_NAME = os.getenv("AZURE_CONTAINER_NAME", "marketdata")
 
 TICKERS = [
     # FAANG + Big Tech
@@ -52,7 +52,7 @@ def fetch_stock_data(ticker: str) -> pd.DataFrame:
 def upload_to_adls(df: pd.DataFrame, ticker: str, service_client: DataLakeServiceClient):
     fs_client = service_client.get_file_system_client(AZURE_CONTAINER_NAME)
     today = datetime.today().strftime("%Y-%m-%d")
-    dir_path = f"stocks/{ticker}/date={today}"
+    dir_path = f"bronze/stocks/{ticker}/date={today}"
     file_name = f"{ticker}_{today}.parquet"
 
     dir_client = fs_client.get_directory_client(dir_path)
