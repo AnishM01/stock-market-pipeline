@@ -135,6 +135,53 @@ Run `notebooks/project_setup.ipynb` to create:
 Or trigger the `stock-market-pipeline-weekly` Databricks Workflow for automated execution.
 
 ---
+## Screenshots
+
+### Automated Pipeline — Databricks Workflow
+All three pipeline stages completing successfully in 15 minutes with full data lineage tracked by Unity Catalog.
+
+![Workflow Run](screenshots/Screenshot%202026-06-09%20131556.png)
+
+### Unity Catalog — Data Architecture
+Stock pipeline catalog with bronze, silver, and gold schemas managed by Unity Catalog.
+
+![Catalog Structure](screenshots/Screenshot%202026-06-09%20131710.png)
+
+### Gold Layer — All 6 Tables
+Six business-ready Delta tables produced by the pipeline with row counts.
+
+![Gold Tables Summary](screenshots/Screenshot%202026-06-09%20132522.png)
+
+### Daily Prices with Return %
+Clean daily OHLCV data enriched with daily percentage return for each ticker.
+
+![Daily Prices](screenshots/Screenshot%202026-06-09%20133243.png)
+
+### Moving Averages
+7-day and 30-day rolling average closing prices for trend analysis.
+
+![Moving Averages](screenshots/Screenshot%202026-06-09%20133143.png)
+
+### Sector Summary
+Daily aggregations by sector showing average price, returns, and total volume.
+
+![Sector Summary](screenshots/Screenshot%202026-06-09%20133016.png)
+
+### Volatility — 30-Day Risk Metric
+Rolling standard deviation of daily returns measuring stock risk profiles.
+
+![Volatility](screenshots/Screenshot%202026-06-09%20133028.png)
+
+### 52-Week High/Low
+Yearly price extremes with percentage distance from highs and lows.
+
+![52-Week High/Low](screenshots/Screenshot%202026-06-09%20132915.png)
+
+### Volume Spike Detection
+Anomaly detection flagging abnormal trading activity — WMT trading 11.65x normal volume.
+
+![Volume Spikes](screenshots/Screenshot%202026-06-09%20132624.png)
+
 
 ## Author
 Anish Matta | [LinkedIn](https://www.linkedin.com/in/anish-matta/) | [GitHub](https://github.com/AnishM01)
